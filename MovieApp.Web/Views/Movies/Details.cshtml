@@ -1,0 +1,28 @@
+﻿@model Movie
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card" style="">
+                <img src="~/img/@Model.ImageUrl" class="card-img-top" alt="@Model.Title">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Title</h5>
+                    <p class="card-text">@Model.Description.</p>
+                    <p class="card-text">@Model.Director.</p>
+                       @*  @if (Model.players != null)
+                        {
+                            <p>
+                                <ul>
+                                    @foreach (var item in Model.players)
+                                    {
+                                        <li>@item</li>
+                                    }
+                                </ul>
+                            </p>
+                        } *@
+                    <a href="https://www.youtube.com/watch?v=AL9zLctDJaU" class="btn btn-primary">Fragmanı İzle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

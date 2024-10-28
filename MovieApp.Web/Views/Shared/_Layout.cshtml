@@ -1,0 +1,47 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />   @* boostrap kütüphanesini lokalden dahil etme*@
+
+	<link href="/css/style.css" rel="stylesheet" />	           @*  css altındaki style işlemlerinin yapıldığı sayfa *@
+	<title></title>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+	@RenderSection("message",false)
+	@await Html.PartialAsync("_navbar")
+	@RenderSection("header",false)
+
+	<div class="container">
+		@if(IsSectionDefined("menu"))
+		{
+			<div class="row">
+			<div class="col-md-3">@RenderSection("menu",false)</div>
+				
+			<div class="col-md-9">@RenderBody()</div>
+
+			</div>
+		
+		}
+		else
+		{
+			<div class="row">
+				<div class="col-md-12">
+					@RenderBody()
+				</div>
+			</div>
+		}
+	
+
+	</div>
+
+
+    <script src="js/bootstrap.min.js"></script>  @* burada ise indirdiğimiz javascript kütüphanesini projemize dahil ettik *@
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+	@RenderSection("scripts",false)
+</body>
+
+</html>
